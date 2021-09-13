@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Seat {
-  final bool? isAvailable;
-  Seat({this.isAvailable});
+  late final bool isAvailable;
+  Seat({required this.isAvailable});
 }
 
 class TicketPage extends StatefulWidget {
@@ -20,6 +20,7 @@ class _TicketPageState extends State<TicketPage> {
   late List<Seat> _item;
   int _row = 10;
   int _column = 14;
+  late List<List<Seat>> _tmp;
   @override
   void initState() {
     Random random = Random();
@@ -28,7 +29,7 @@ class _TicketPageState extends State<TicketPage> {
     _item.forEach((element) {
       print(element.isAvailable);
     });
-    var _tmp = List.generate(
+    _tmp = List.generate(
         _column,
         (index) => List<Seat>.generate(
             _row, (index) => Seat(isAvailable: random.nextBool())));
@@ -192,7 +193,335 @@ class _TicketPageState extends State<TicketPage> {
                               Expanded(
                                   flex: 1,
                                   child: Row(children: _buildSeatTile())),
-                              Expanded(flex: 15, child: Placeholder())
+                              Expanded(
+                                flex: 15,
+                                child: ListView.builder(
+                                    itemCount: _tmp.length,
+                                    itemBuilder: (context, index) {
+                                      late List<Seat> _seatItems = _tmp[index];
+                                      int idx = 30 + index;
+                                      return Padding(
+                                        padding: const EdgeInsets.all(6.0),
+                                        child: Row(
+                                          children: [
+                                            Expanded(
+                                                child: Text(
+                                              idx.toString(),
+                                              style: GoogleFonts.montserrat(
+                                                  color: Colors.white,
+                                                  fontSize: 14),
+                                            )),
+                                            Expanded(
+                                                child: _seatItems[0].isAvailable
+                                                    ? Container(
+                                                        margin: EdgeInsets
+                                                            .symmetric(
+                                                                horizontal: 3),
+                                                        height: 20,
+                                                        width: 24,
+                                                        decoration: BoxDecoration(
+                                                            color: Colors.white,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        6)),
+                                                      )
+                                                    : Container(
+                                                        margin: EdgeInsets
+                                                            .symmetric(
+                                                                horizontal: 3),
+                                                        height: 20,
+                                                        width: 24,
+                                                        decoration: BoxDecoration(
+                                                            border: Border.all(
+                                                                color: Colors
+                                                                    .white),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        6)),
+                                                      )),
+                                            Expanded(
+                                                child: _seatItems[1].isAvailable
+                                                    ? Container(
+                                                        margin: EdgeInsets
+                                                            .symmetric(
+                                                                horizontal: 3),
+                                                        height: 20,
+                                                        width: 24,
+                                                        decoration: BoxDecoration(
+                                                            color: Colors.white,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        6)),
+                                                      )
+                                                    : Container(
+                                                        margin: EdgeInsets
+                                                            .symmetric(
+                                                                horizontal: 3),
+                                                        height: 20,
+                                                        width: 24,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                                border:
+                                                                    Border.all(
+                                                                  color: Colors
+                                                                      .white,
+                                                                ),
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            6)),
+                                                      )),
+                                            Expanded(
+                                                child: _seatItems[2].isAvailable
+                                                    ? Container(
+                                                        margin: EdgeInsets
+                                                            .symmetric(
+                                                                horizontal: 3),
+                                                        height: 20,
+                                                        width: 24,
+                                                        decoration: BoxDecoration(
+                                                            color: Colors.white,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        6)),
+                                                      )
+                                                    : Container(
+                                                        margin: EdgeInsets
+                                                            .symmetric(
+                                                                horizontal: 3),
+                                                        height: 20,
+                                                        width: 24,
+                                                        decoration: BoxDecoration(
+                                                            border: Border.all(
+                                                                color: Colors
+                                                                    .white),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        6)),
+                                                      )),
+                                            Expanded(child: Container()),
+                                            Expanded(
+                                              child: _seatItems[3].isAvailable
+                                                  ? Container(
+                                                      margin:
+                                                          EdgeInsets.symmetric(
+                                                              horizontal: 3),
+                                                      height: 20,
+                                                      width: 24,
+                                                      decoration: BoxDecoration(
+                                                        color: Colors.white,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(6),
+                                                      ),
+                                                    )
+                                                  : Container(
+                                                      margin:
+                                                          EdgeInsets.symmetric(
+                                                              horizontal: 3),
+                                                      height: 20,
+                                                      width: 24,
+                                                      decoration: BoxDecoration(
+                                                          border: Border.all(
+                                                              color:
+                                                                  Colors.white),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(6)),
+                                                    ),
+                                            ),
+                                            Expanded(
+                                                child: _seatItems[4].isAvailable
+                                                    ? Container(
+                                                        margin: EdgeInsets
+                                                            .symmetric(
+                                                                horizontal: 3),
+                                                        height: 20,
+                                                        width: 24,
+                                                        decoration: BoxDecoration(
+                                                            color: Colors.white,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        6)),
+                                                      )
+                                                    : Container(
+                                                        margin: EdgeInsets
+                                                            .symmetric(
+                                                                horizontal: 3),
+                                                        height: 20,
+                                                        width: 24,
+                                                        decoration: BoxDecoration(
+                                                            border: Border.all(
+                                                                color: Colors
+                                                                    .white),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        6)),
+                                                      )),
+                                            Expanded(
+                                                child: _seatItems[5].isAvailable
+                                                    ? Container(
+                                                        margin: EdgeInsets
+                                                            .symmetric(
+                                                                horizontal: 3),
+                                                        height: 20,
+                                                        width: 24,
+                                                        decoration: BoxDecoration(
+                                                            color: Colors.white,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        6)),
+                                                      )
+                                                    : Container(
+                                                        margin: EdgeInsets
+                                                            .symmetric(
+                                                                horizontal: 3),
+                                                        height: 20,
+                                                        width: 24,
+                                                        decoration: BoxDecoration(
+                                                            border: Border.all(
+                                                                color: Colors
+                                                                    .white),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        6)),
+                                                      )),
+                                            Expanded(
+                                                child: _seatItems[6].isAvailable
+                                                    ? Container(
+                                                        margin: EdgeInsets
+                                                            .symmetric(
+                                                                horizontal: 3),
+                                                        height: 20,
+                                                        width: 24,
+                                                        decoration: BoxDecoration(
+                                                            color: Colors.white,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        6)),
+                                                      )
+                                                    : Container(
+                                                        margin: EdgeInsets
+                                                            .symmetric(
+                                                                horizontal: 3),
+                                                        height: 20,
+                                                        width: 24,
+                                                        decoration: BoxDecoration(
+                                                            border: Border.all(
+                                                                color: Colors
+                                                                    .white),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        6)),
+                                                      )),
+                                            Expanded(child: Container()),
+                                            Expanded(
+                                                child: _seatItems[7].isAvailable
+                                                    ? Container(
+                                                        margin: EdgeInsets
+                                                            .symmetric(
+                                                                horizontal: 3),
+                                                        height: 20,
+                                                        width: 24,
+                                                        decoration: BoxDecoration(
+                                                            color: Colors.white,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        6)),
+                                                      )
+                                                    : Container(
+                                                        margin: EdgeInsets
+                                                            .symmetric(
+                                                                horizontal: 3),
+                                                        height: 20,
+                                                        width: 24,
+                                                        decoration: BoxDecoration(
+                                                            border: Border.all(
+                                                                color: Colors
+                                                                    .white),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        6)),
+                                                      )),
+                                            Expanded(
+                                                child: _seatItems[8].isAvailable
+                                                    ? Container(
+                                                        margin: EdgeInsets
+                                                            .symmetric(
+                                                                horizontal: 3),
+                                                        height: 20,
+                                                        width: 24,
+                                                        decoration: BoxDecoration(
+                                                            color: Colors.white,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        6)),
+                                                      )
+                                                    : Container(
+                                                        margin: EdgeInsets
+                                                            .symmetric(
+                                                                horizontal: 3),
+                                                        height: 20,
+                                                        width: 24,
+                                                        decoration: BoxDecoration(
+                                                            border: Border.all(
+                                                                color: Colors
+                                                                    .white),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        6)),
+                                                      )),
+                                            Expanded(
+                                                child: _seatItems[9].isAvailable
+                                                    ? Container(
+                                                        margin: EdgeInsets
+                                                            .symmetric(
+                                                                horizontal: 3),
+                                                        height: 20,
+                                                        width: 24,
+                                                        decoration: BoxDecoration(
+                                                            color: Colors.white,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        6)),
+                                                      )
+                                                    : Container(
+                                                        margin: EdgeInsets
+                                                            .symmetric(
+                                                                horizontal: 3),
+                                                        height: 20,
+                                                        width: 24,
+                                                        decoration: BoxDecoration(
+                                                            border: Border.all(
+                                                                color: Colors
+                                                                    .white),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        6)),
+                                                      )),
+                                            Expanded(child: Container())
+                                          ],
+                                        ),
+                                      );
+                                    }),
+                              ),
                             ],
                           )),
                       Expanded(
