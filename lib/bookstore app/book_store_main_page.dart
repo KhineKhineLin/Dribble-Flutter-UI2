@@ -122,13 +122,83 @@ class _BookStoreMainPageState extends State<BookStoreMainPage> {
                 ),
               ),
               Container(
-                height: deviceHeight / 11,
-                decoration: BoxDecoration(color: Colors.black),
+                height: deviceHeight / 12,
+                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                child: Container(
+                  padding: EdgeInsets.only(left: 8),
+                  decoration: BoxDecoration(
+                      color: Colors.grey[200],
+                      borderRadius: BorderRadius.circular(8)),
+                  child: TextField(
+                    decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: 'Search',
+                        icon: Icon(Icons.search)),
+                  ),
+                ),
               ),
               Container(
-                height: deviceHeight / 7.5,
-                decoration: BoxDecoration(
-                  color: Colors.brown,
+                padding: EdgeInsets.only(left: 24, top: 12, bottom: 12),
+                height: deviceHeight / 9,
+                child: Row(
+                  children: [
+                    Container(
+                      width: 160,
+                      height: double.infinity,
+                      decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                          borderRadius: BorderRadius.circular(10)),
+                      padding: EdgeInsets.only(left: 8),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.whatshot,
+                            color: Colors.red,
+                            size: 34,
+                          ),
+                          SizedBox(
+                            width: 8,
+                          ),
+                          Text(
+                            'Best Seller',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      width: 16,
+                    ),
+                    Container(
+                      width: 160,
+                      height: double.infinity,
+                      padding: EdgeInsets.only(left: 8),
+                      decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                          borderRadius: BorderRadius.circular(10)),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.notifications_none,
+                            color: Colors.red,
+                            size: 34,
+                          ),
+                          SizedBox(
+                            width: 8,
+                          ),
+                          Text(
+                            'New Items',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
+                          )
+                        ],
+                      ),
+                    )
+                  ],
                 ),
               ),
               Container(
