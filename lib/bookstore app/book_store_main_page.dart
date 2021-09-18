@@ -1,3 +1,4 @@
+import 'package:dribble_flutter_ui2/bookstore%20app/detail_page.dart';
 import 'package:flutter/material.dart';
 
 class BookStoreMainPage extends StatefulWidget {
@@ -217,7 +218,7 @@ class _BookStoreMainPageState extends State<BookStoreMainPage>
                         flex: 4,
                         child: Padding(
                           padding: const EdgeInsets.only(left: 24),
-                          child: Text('Literature'),
+                          child: Text('ကျန်းမာရေး'),
                         )),
                     Expanded(
                         flex: 10,
@@ -233,7 +234,7 @@ class _BookStoreMainPageState extends State<BookStoreMainPage>
                               width: 92,
                               child: Center(
                                 child: Text(
-                                  'Classic',
+                                  'ဟာသ',
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold),
@@ -251,7 +252,7 @@ class _BookStoreMainPageState extends State<BookStoreMainPage>
                               width: 92,
                               child: Center(
                                 child: Text(
-                                  'Fantasy',
+                                  'စုံထောက်',
                                   style: TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold),
@@ -269,7 +270,7 @@ class _BookStoreMainPageState extends State<BookStoreMainPage>
                               width: 92,
                               child: Center(
                                 child: Text(
-                                  'History',
+                                  'စီးပွားရေး',
                                   style: TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold),
@@ -287,7 +288,335 @@ class _BookStoreMainPageState extends State<BookStoreMainPage>
                               width: 92,
                               child: Center(
                                 child: Text(
-                                  'Horror',
+                                  'သည်းထိပ်ရင်ဖို',
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            )
+                          ],
+                        ))
+                  ],
+                ),
+              ),
+              Container(
+                height: deviceHeight / 3,
+                padding: EdgeInsets.only(left: 16, bottom: 16),
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => DetailPage()));
+                      },
+                      child: Container(
+                        width: 160,
+                        child: Hero(
+                          tag: 'img',
+                          child: Card(
+                            elevation: 6,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12)),
+                            child: Padding(
+                              padding: const EdgeInsets.only(bottom: 8),
+                              child: Column(
+                                children: [
+                                  Expanded(
+                                      flex: 6,
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Container(
+                                            margin: EdgeInsets.only(
+                                                top: 8,
+                                                left: 16,
+                                                bottom: 8,
+                                                right: 4),
+                                            width: 92,
+                                            decoration: BoxDecoration(
+                                                image: DecorationImage(
+                                                    image: AssetImage(
+                                                        'images/MMSMouteLouteNeeAMyo.jpg'),
+                                                    fit: BoxFit.cover)),
+                                          ),
+                                          Icon(
+                                            Icons.favorite,
+                                            color: Colors.red,
+                                            size: 20,
+                                          )
+                                        ],
+                                      )),
+                                  Expanded(
+                                      flex: 3,
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'မုန့်လုပ်နည်း အမျိုးမျိုး',
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                          Text(
+                                            'မာမာစိုး',
+                                            style: TextStyle(fontSize: 10),
+                                          )
+                                        ],
+                                      )),
+                                  Expanded(
+                                      flex: 2,
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text('0.55 USD'),
+                                            Icon(Icons.shopping_basket)
+                                          ],
+                                        ),
+                                      ))
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      width: 160,
+                      child: Card(
+                        elevation: 6,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12)),
+                        child: Padding(
+                          padding: const EdgeInsets.only(bottom: 8),
+                          child: Column(
+                            children: [
+                              Expanded(
+                                  flex: 6,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        margin: EdgeInsets.only(
+                                            top: 8,
+                                            left: 16,
+                                            bottom: 8,
+                                            right: 4),
+                                        width: 92,
+                                        decoration: BoxDecoration(
+                                            image: DecorationImage(
+                                                image: AssetImage(
+                                                    'images/NOWeightChaANu.jpg'),
+                                                fit: BoxFit.cover)),
+                                      ),
+                                      Icon(
+                                        Icons.favorite,
+                                        color: Colors.red,
+                                        size: 20,
+                                      )
+                                    ],
+                                  )),
+                              Expanded(
+                                  flex: 3,
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'ဝိတ်ချခြင်းအနုပညာ',
+                                        style: TextStyle(
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      Text(
+                                        'နိုင်ဦး',
+                                        style: TextStyle(fontSize: 10),
+                                      )
+                                    ],
+                                  )),
+                              Expanded(
+                                  flex: 2,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text('5.75 USD'),
+                                        Icon(Icons.shopping_basket)
+                                      ],
+                                    ),
+                                  ))
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      width: 160,
+                      child: Card(
+                        elevation: 6,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12)),
+                        child: Padding(
+                          padding: const EdgeInsets.only(bottom: 8),
+                          child: Column(
+                            children: [
+                              Expanded(
+                                  flex: 6,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        margin: EdgeInsets.only(
+                                            top: 8,
+                                            left: 16,
+                                            bottom: 8,
+                                            right: 4),
+                                        width: 92,
+                                        decoration: BoxDecoration(
+                                            image: DecorationImage(
+                                                image: AssetImage(
+                                                    'images/SatMyoTitKwa.jpg'),
+                                                fit: BoxFit.cover)),
+                                      ),
+                                      Icon(
+                                        Icons.favorite,
+                                        color: Colors.red,
+                                        size: 20,
+                                      )
+                                    ],
+                                  )),
+                              Expanded(
+                                  flex: 3,
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'စပ်မျိုးသစ်ခွ စိုက်ပျိုးနည်း',
+                                        style: TextStyle(
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      Text(
+                                        'တင်မြင့်စော',
+                                        style: TextStyle(fontSize: 10),
+                                      )
+                                    ],
+                                  )),
+                              Expanded(
+                                  flex: 2,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text('3.45 USD'),
+                                        Icon(Icons.shopping_basket)
+                                      ],
+                                    ),
+                                  ))
+                            ],
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              Container(
+                height: deviceHeight / 14,
+                child: Row(
+                  children: [
+                    Expanded(
+                        flex: 4,
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 24),
+                          child: Text('ရသ'),
+                        )),
+                    Expanded(
+                        flex: 10,
+                        child: ListView(
+                          padding: EdgeInsets.zero,
+                          scrollDirection: Axis.horizontal,
+                          children: [
+                            Container(
+                              margin: EdgeInsets.symmetric(vertical: 10),
+                              decoration: BoxDecoration(
+                                  color: Colors.grey[200],
+                                  borderRadius: BorderRadius.circular(24)),
+                              width: 92,
+                              child: Center(
+                                child: Text(
+                                  'ဘာသာပြန်',
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              width: 12,
+                            ),
+                            Container(
+                              margin: EdgeInsets.symmetric(vertical: 10),
+                              decoration: BoxDecoration(
+                                  color: Colors.grey[200],
+                                  borderRadius: BorderRadius.circular(24)),
+                              width: 92,
+                              child: Center(
+                                child: Text(
+                                  'နည်းပညာ',
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              width: 12,
+                            ),
+                            Container(
+                              margin: EdgeInsets.symmetric(vertical: 10),
+                              decoration: BoxDecoration(
+                                  color: Colors.grey[200],
+                                  borderRadius: BorderRadius.circular(24)),
+                              width: 92,
+                              child: Center(
+                                child: Text(
+                                  'ဘာသာစကား',
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              width: 12,
+                            ),
+                            Container(
+                              margin: EdgeInsets.symmetric(vertical: 10),
+                              decoration: BoxDecoration(
+                                  color: Colors.grey[200],
+                                  borderRadius: BorderRadius.circular(24)),
+                              width: 92,
+                              child: Center(
+                                child: Text(
+                                  'ဘာသာ‌ရေး',
                                   style: TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold),
@@ -330,7 +659,7 @@ class _BookStoreMainPageState extends State<BookStoreMainPage>
                                         decoration: BoxDecoration(
                                             image: DecorationImage(
                                                 image: AssetImage(
-                                                    'images/flutter-apprentice.png'),
+                                                    'images/TLSaeHtarTawTaGaMyar.jpg'),
                                                 fit: BoxFit.cover)),
                                       ),
                                       Icon(
@@ -348,13 +677,13 @@ class _BookStoreMainPageState extends State<BookStoreMainPage>
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'Flutter Apprentice',
+                                        'စေ့ထားသော တံခါးများ',
                                         style: TextStyle(
                                             fontSize: 12,
                                             fontWeight: FontWeight.bold),
                                       ),
                                       Text(
-                                        'Kevin David Moore',
+                                        'သက်လုံ',
                                         style: TextStyle(fontSize: 10),
                                       )
                                     ],
@@ -367,7 +696,7 @@ class _BookStoreMainPageState extends State<BookStoreMainPage>
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Text('\$ 300'),
+                                        Text('7.50 USD'),
                                         Icon(Icons.shopping_basket)
                                       ],
                                     ),
@@ -402,14 +731,14 @@ class _BookStoreMainPageState extends State<BookStoreMainPage>
                                         decoration: BoxDecoration(
                                             image: DecorationImage(
                                                 image: AssetImage(
-                                                    'images/Windmill-Flutter-HI.png'),
+                                                    'images/MBAKBaganBituka.jpg'),
                                                 fit: BoxFit.cover)),
                                       ),
                                       Icon(
                                         Icons.favorite,
                                         color: Colors.red,
                                         size: 20,
-                                      )
+                                      ),
                                     ],
                                   )),
                               Expanded(
@@ -420,13 +749,13 @@ class _BookStoreMainPageState extends State<BookStoreMainPage>
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'Flutter in Action',
+                                        'ပုဂံခေတ် ဗိသုကာလက်ရာများ',
                                         style: TextStyle(
                                             fontSize: 12,
                                             fontWeight: FontWeight.bold),
                                       ),
                                       Text(
-                                        'Eric Windmill',
+                                        'မင်းဘူးအောင်ကြိုင်',
                                         style: TextStyle(fontSize: 10),
                                       )
                                     ],
@@ -439,7 +768,7 @@ class _BookStoreMainPageState extends State<BookStoreMainPage>
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Text('\$ 400'),
+                                        Text('2.85 USD'),
                                         Icon(Icons.shopping_basket)
                                       ],
                                     ),
@@ -474,14 +803,14 @@ class _BookStoreMainPageState extends State<BookStoreMainPage>
                                         decoration: BoxDecoration(
                                             image: DecorationImage(
                                                 image: AssetImage(
-                                                    'images/flutter-for-beginners.jpg'),
+                                                    'images/TRAMynSaAPoMaTan.jpg'),
                                                 fit: BoxFit.cover)),
                                       ),
                                       Icon(
                                         Icons.favorite,
                                         color: Colors.red,
                                         size: 20,
-                                      )
+                                      ),
                                     ],
                                   )),
                               Expanded(
@@ -492,13 +821,13 @@ class _BookStoreMainPageState extends State<BookStoreMainPage>
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'Flutter for Beginners',
+                                        'မြန်မာ အဖိုးမတန်ကြောင်း',
                                         style: TextStyle(
                                             fontSize: 12,
                                             fontWeight: FontWeight.bold),
                                       ),
                                       Text(
-                                        'Alessandro Biessek',
+                                        'သူရအောင် (မြန်မာစာ)',
                                         style: TextStyle(fontSize: 10),
                                       )
                                     ],
@@ -511,7 +840,7 @@ class _BookStoreMainPageState extends State<BookStoreMainPage>
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Text('\$ 500'),
+                                        Text('2.85 USD'),
                                         Icon(Icons.shopping_basket)
                                       ],
                                     ),
@@ -523,14 +852,6 @@ class _BookStoreMainPageState extends State<BookStoreMainPage>
                     )
                   ],
                 ),
-              ),
-              Container(
-                height: deviceHeight / 11,
-                decoration: BoxDecoration(color: Colors.green),
-              ),
-              Container(
-                height: deviceHeight / 3,
-                decoration: BoxDecoration(color: Colors.blue),
               )
             ],
           ),
